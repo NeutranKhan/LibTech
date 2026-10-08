@@ -1,0 +1,48 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "payments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "amountCents", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "role",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "suspended",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "courses",
+      "fieldPath": "modules",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "progress",
+      "fieldPath": "drafts",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "exerciseAttempts",
+      "fieldPath": "answer",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "aiUsage",
+      "fieldPath": "feedback",
+      "indexes": []
+    }
+  ]
+}

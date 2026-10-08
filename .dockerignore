@@ -1,0 +1,8 @@
+node_modules
+.next
+.next-test
+.next-e2e
+.git
+.env*
+.local-data
+work

@@ -1,0 +1,278 @@
+/* Transform/opacity motion only; content remains available without JavaScript. */
+html[data-motion='on'] {
+  scroll-behavior: smooth;
+}
+html[data-motion='on'] .hero:after {
+  background: radial-gradient(
+    ellipse 440px 360px at var(--glow-x, 80%) var(--glow-y, 40%),
+    #40c8ba1e,
+    transparent 80%
+  );
+  transition: opacity 0.5s;
+}
+html[data-motion='on'] .hero-lesson {
+  animation: lab-breathe 7s ease-in-out infinite;
+}
+html[data-motion='on'] .hero-lesson:before {
+  background-size: 200% 100%;
+  animation: edge-travel 5s ease-in-out infinite;
+}
+html[data-motion='on'] .course-art .abstract-grid > span:first-child {
+  animation: symbol-breathe 6s ease-in-out infinite;
+}
+html[data-motion='on'] .level-number {
+  animation: level-halo 5s ease-in-out infinite;
+}
+html[data-motion='on'] .feedback,
+html[data-motion='on'] .alert.success {
+  animation: feedback-arrive 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+html[data-motion='on'] .sample-success {
+  animation: success-arrive 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+html[data-motion='on'] .sample-complete h2 {
+  animation: feedback-arrive 0.55s 0.1s both cubic-bezier(0.16, 1, 0.3, 1);
+}
+html[data-motion='on'] progress::-webkit-progress-value {
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+html[data-motion='on'] progress::-moz-progress-bar {
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+html[data-motion='on'] .button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.2s,
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+html[data-motion='on'] .button:after {
+  content: '';
+  position: absolute;
+  inset: -50% auto -50% -70%;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, #ffffff26, transparent);
+  transform: skewX(-22deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+html[data-motion='on'] .button:hover:after {
+  left: 130%;
+}
+html[data-motion='on'] .button:active {
+  transform: translateY(0) scale(0.975);
+}
+html[data-motion='on'] .step-card,
+html[data-motion='on'] .stat-card,
+html[data-motion='on'] .learning-card {
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+html[data-motion='on'] .step-card:hover {
+  transform: translateY(-6px);
+  border-color: #456779;
+  box-shadow: 0 12px 36px #0003;
+}
+html[data-motion='on'] .stat-card:hover {
+  transform: translateY(-3px);
+  border-color: #3d5b71;
+}
+html[data-motion='on'] .step-card:hover .step-number {
+  transform: rotate(-7deg) scale(1.08);
+}
+.step-number,
+.stat-card svg,
+.sidebar nav svg {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+html[data-motion='on'] .stat-card:hover svg {
+  transform: scale(1.09);
+}
+html[data-motion='on'] .sidebar nav a:hover svg {
+  transform: translateX(2px);
+}
+html[data-motion='on'] .choice {
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+html[data-motion='on'] .choice:active {
+  transform: scale(0.99);
+}
+html[data-motion='on'] .choice.selected .choice-letter {
+  animation: choice-select 0.3s cubic-bezier(0.2, 1.3, 0.5, 1);
+}
+.faq-section summary > span {
+  transition: transform 0.25s;
+}
+.faq-section details[open] summary > span {
+  transform: rotate(45deg);
+}
+html[data-motion='on'] .faq-section details[open] > p,
+html[data-motion='on'] .curriculum details[open] > ol {
+  animation: feedback-arrive 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.motion-toggle {
+  position: fixed;
+  bottom: 15px;
+  right: 17px;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  min-height: 35px;
+  border: 1px solid #35495f;
+  border-radius: 30px;
+  background: #101b2dec;
+  backdrop-filter: blur(10px);
+  color: #93afc6;
+  font:
+    500 0.75rem var(--font-manrope),
+    Arial,
+    sans-serif;
+  box-shadow: 0 5px 20px #0003;
+}
+.motion-toggle:hover {
+  color: #bcf0e4;
+  border-color: #5ba294;
+}
+.celebration {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+}
+.celebration i {
+  position: absolute;
+  top: 55%;
+  height: 9px;
+  width: 5px;
+  border-radius: 1px;
+}
+.stat-card strong > span {
+  font: inherit !important;
+  color: inherit !important;
+  letter-spacing: inherit !important;
+}
+@keyframes lab-breathe {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 6px #182b3544,
+      0 28px 70px #00000055;
+  }
+  50% {
+    box-shadow:
+      0 0 0 6px #1c43424a,
+      0 28px 70px #0b6e611c;
+  }
+}
+@keyframes edge-travel {
+  0%,
+  100% {
+    background-position: 0 0;
+    opacity: 0.4;
+  }
+  50% {
+    background-position: 100% 0;
+    opacity: 1;
+  }
+}
+@keyframes symbol-breathe {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-6px) rotate(3deg);
+  }
+}
+@keyframes level-halo {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 #65e4d308,
+      0 0 35px #39b5a310;
+  }
+  50% {
+    box-shadow:
+      0 0 0 7px #65e4d306,
+      0 0 40px #39b5a320;
+  }
+}
+@keyframes feedback-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes success-arrive {
+  from {
+    opacity: 0;
+    transform: scale(0.7) rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes choice-select {
+  0% {
+    transform: scale(0.85);
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+html[data-motion='off'] *,
+html[data-motion='off'] *:before,
+html[data-motion='off'] *:after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .celebration {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .motion-toggle {
+    padding: 8px;
+    bottom: 12px;
+    right: 12px;
+    min-width: 32px;
+    min-height: 32px;
+    justify-content: center;
+  }
+  .motion-toggle > span {
+    display: none;
+  }
+  html[data-motion='on'] .hero:after {
+    background: radial-gradient(ellipse at 70% 40%, #40c8ba18, transparent 65%);
+  }
+}

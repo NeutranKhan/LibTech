@@ -1,0 +1,11 @@
+node_modules
+.next
+.local-data
+work
+package-lock.json
+AGENTS.md
+CLAUDE.md
+
+.next-e2e
+.next-test
+.vercel
