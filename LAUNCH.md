@@ -1,5 +1,8 @@
 # LibTech production launch
 
+> Current launch mode (8 October 2026): all published courses are free, regardless of stored future prices. Authenticated learners enroll through `/api/enroll`; course payment submissions are disabled at the API boundary and checkout links redirect to the free course page. Optional donations never unlock access or certificates. Set `DONATION_URL` only after verifying an HTTPS payment page that supports your country and account. Leave it blank until ready. The `/support` page explains this clearly. Older paid-launch instructions below apply only after a deliberate future commercial release and the appropriate hosting plan; changing an admin payment setting alone does not enable sales.
+
+
 ## Current state
 
 The authenticated landing page is `/dashboard`. Login and signup preserve a validated local destination in `next` when opened from a course, including across email verification and password recovery. Logged-in visitors to the homepage go to their dashboard. The private profile has an initials avatar, cover, editable details, learning stats, achievements and activity; image upload controls are not shown.

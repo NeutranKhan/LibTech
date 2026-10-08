@@ -1,3 +1,4 @@
+import { enrollFree } from '@/server/enrollment';
 import { NextResponse } from 'next/server';
 import { aiFeedbackEnabled, profilePhotosEnabled } from '@/server/features';
 import { cookies } from 'next/headers';
@@ -54,10 +55,9 @@ export async function GET(request: Request, context: Context) {
     if (path === 'catalog') return response(await catalog());
     if (path === 'me') return response({ user: await currentUser() });
     if (path === 'settings/public') {
-      const s = configured() ? await store().get<Settings>('settings', 'platform') : null;
       return response({
-        paymentInstructions: s?.paymentInstructions ?? '',
-        paymentsEnabled: s?.paymentsEnabled ?? false,
+        paymentInstructions: '',
+        paymentsEnabled: false,
       });
     }
     if (path.startsWith('certificate/')) {
@@ -202,6 +202,10 @@ export async function POST(request: Request, context: Context) {
     const user = await requireUser();
     const db = store();
     rateLimit('user:' + user.id, 180);
+    if (path === 'enroll') {
+      const d = await body(request, z.object({ courseId: idSchema }));
+      return response(await enrollFree(db, user, d.courseId));
+    }
     if (path === 'draft') {
       const d = await body(request, exercise.extend({ answer: z.string().max(3000) }));
       return response(await saveDraft(db, user, d.courseId, d.lessonId, d.blockId, d.answer));
@@ -263,6 +267,7 @@ export async function POST(request: Request, context: Context) {
       return response(await completeLesson(db, user, d.courseId, d.lessonId));
     }
     if (path === 'payments') {
+      ensure(false, 403, 'All courses are free. Course payments are disabled.');
       const d = await body(
         request,
         z.object({ courseId: idSchema, reference: z.string().trim().min(5).max(120) }),

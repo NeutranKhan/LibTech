@@ -234,7 +234,7 @@ export function newCourse(ownerId: string): Course {
     description: 'Describe the practical skills learners will develop in this course.',
     category: 'AI foundations',
     difficulty: 'Beginner',
-    priceCents: 1000,
+    priceCents: 0,
     duration: '2 hours',
     instructor: 'LibTech Learning Team',
     ownerId,

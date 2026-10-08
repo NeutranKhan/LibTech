@@ -453,7 +453,7 @@ function SettingsForm() {
     try {
       const values = {
         paymentInstructions: String(form.get('paymentInstructions')),
-        paymentsEnabled: form.get('paymentsEnabled') === 'on',
+        paymentsEnabled: false,
         aiDailyLimit: Number(form.get('aiDailyLimit')),
         aiLessonLimit: Number(form.get('aiLessonLimit')),
         lessonXP: Number(form.get('lessonXP')),
@@ -490,11 +490,7 @@ function SettingsForm() {
             />
           </label>
           <label className="check-label">
-            <input
-              type="checkbox"
-              name="paymentsEnabled"
-              defaultChecked={settings.paymentsEnabled}
-            />
+            <input type="checkbox" name="paymentsEnabled" checked={false} disabled />
             Accept manual payment requests
           </label>
           <h3>AI usage limits</h3>

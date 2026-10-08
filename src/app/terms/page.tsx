@@ -1,6 +1,5 @@
 import { Header, Footer } from '@/components/public-shell';
 import { OperatorContact } from '@/components/operator-contact';
-import { site } from '@/lib/site';
 export const metadata = { title: 'Learning terms' };
 export default function Page() {
   return (
@@ -11,9 +10,9 @@ export default function Page() {
         <h1 className="page-title">Learning with LibTech</h1>
         <h2>Course access</h2>
         <p>
-          Each course is a one-time purchase at the displayed price. Approved purchases grant
-          lifetime access to that course while LibTech operates the service. Manual payments require
-          independent verification before access is granted.
+          All current courses are free. Create an account to save progress and enroll. Donations are
+          voluntary and do not affect course access, assessments, or certificates. Access remains
+          subject to these terms while LibTech operates the service.
         </p>
         <h2>Learning and certificates</h2>
         <p>
@@ -27,12 +26,13 @@ export default function Page() {
           exercise service, or attempt to manipulate payments, progress, or certificates. AI
           feedback may contain mistakes and should be reviewed critically.
         </p>
-        <h2>Payments and refunds</h2>
+        <h2>Optional donations</h2>
         <p>
-          Only follow the payment instructions shown inside the signed-in course checkout. Refunds
-          must be arranged with the operator.
+          Donations support LibTech and are not course purchases. For duplicate, mistaken, or
+          unauthorized contributions, contact libtech1393@gmail.com with your payment reference. Do
+          not send passwords or card details. Requests are reviewed individually; applicable legal
+          rights remain unchanged. We do not claim contributions are tax-deductible.
         </p>
-        <p>{site.refundPolicy}</p>
         <OperatorContact />
       </main>
       <Footer />

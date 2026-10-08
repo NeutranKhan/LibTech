@@ -1,5 +1,11 @@
 # Validation
 
+## Free learning and optional support — 8 October 2026
+
+All published courses are presented as free, including existing records with stored future prices. Free enrollment checks the current account and published status transactionally and is idempotent. Course payments are blocked by the API, legacy checkout links return to the course, and unenrolled learners receive the free enrollment page. Donations do not affect access or certificates; no donation destination is configured yet. The support page accepts an optional HTTPS DONATION_URL. Paid-provider code remains for a future reviewed commercial release.
+
+Production Webpack build, TypeScript, ESLint and 29 unit/business tests passed. Tests cover free enrollment, repeat enrollment, unpaid access after enrollment, draft and suspended-account rejection, and preserved payment logic using explicitly priced test fixtures.
+
 ## Dashboard, profile and administration — 8 October 2026
 
 - Ordinary sign-in and the signed-in homepage open `/dashboard`. Protected course destinations survive login, signup, password recovery and email-verification links. Return paths are restricted to known local pages.
@@ -67,3 +73,5 @@ The supplied key was stored only in `.env.local`, with `OPENAI_MODEL=gpt-4.1-min
 The browser test initially used ambiguous label/alert selectors; those test selectors were corrected. Saved draft text and the disconnected-AI message were present in the failure snapshots. The final targeted test passed.
 
 At the time of the original build checks, no Firebase project, real email delivery, OpenAI account, actual payment service or Vercel deployment was connected. The browser and business tests above used local preview accounts and a separate temporary database. The subsequent Firebase connection is recorded separately above.
+
+Free-mode browser verification: 12 of 13 checks passed in the full run; the remaining course-intent navigation was interrupted with ERR_ABORTED and passed on targeted rerun. The optional real-owner smoke check could not authenticate on this run because the Firebase token endpoint connection reset before TLS completed. Earlier owner checks remain recorded above; no live account or payment records were modified by this change.

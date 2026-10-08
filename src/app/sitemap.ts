@@ -7,6 +7,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     { url: base },
     { url: base + '/courses' },
+    { url: base + '/support' },
     ...(await catalog()).map((c) => ({ url: base + '/courses/' + c.slug })),
   ];
 }

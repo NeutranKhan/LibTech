@@ -14,6 +14,7 @@ export function AppShell({ user, children }: { user: User; children: React.React
     ['/courses', 'Explore courses', BookOpen],
     ['/certificates', 'Certificates', Award],
     ['/profile', 'My profile', UserRound],
+    ['/support', 'Support free learning', BookOpen],
   ] as const;
   return (
     <div className="app-shell">

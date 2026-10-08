@@ -67,7 +67,7 @@ export function Catalog({ courses }: { courses: Course[] }) {
                 {c.duration} · {c.modules.reduce((n, m) => n + m.lessons.length, 0)} lessons
               </div>
               <div className="course-bottom">
-                <strong className="price">${(c.priceCents / 100).toFixed(0)}</strong>
+                <strong className="price">Free</strong>
                 <Link className="button small" href={'/courses/' + c.slug}>
                   View course
                 </Link>

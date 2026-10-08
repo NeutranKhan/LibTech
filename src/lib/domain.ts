@@ -277,6 +277,7 @@ export function ensure(condition: unknown, status: number, message: string): ass
 export function publicCourse(c: Course) {
   return {
     ...c,
+    priceCents: 0,
     modules: c.modules.map((m) => ({
       ...m,
       lessons: m.lessons.filter((l) => l.published).map((l) => ({ ...l, blocks: [] })),

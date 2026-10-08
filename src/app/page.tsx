@@ -9,12 +9,6 @@ export default async function Home() {
   if (await currentUser()) redirect('/dashboard');
   const courses = await catalog();
   const featured = courses[0];
-  const price = (amount: number, currency: string) =>
-    new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency,
-      maximumFractionDigits: 2,
-    }).format(amount / 100);
   return (
     <>
       <Header />
@@ -106,8 +100,8 @@ export default async function Home() {
                 </div>
                 <div className="course-bottom">
                   <div>
-                    <strong className="price">{price(featured.priceCents, 'USD')}</strong>
-                    <span className="muted">One-time payment · lifetime access</span>
+                    <strong className="price">Free</strong>
+                    <span className="muted">Free learning · optional donations</span>
                   </div>
                   <Link href={'/courses/' + featured.slug} className="button">
                     Explore this course
@@ -171,15 +165,15 @@ export default async function Home() {
               ],
               [
                 'Is this a subscription?',
-                'No. Each course is a one-time purchase at its displayed price, with access for as long as LibTech operates the service.',
+                'No. All current courses, exercises and completion certificates are free. Donations are entirely optional.',
               ],
               [
                 'Can I learn on my phone?',
                 'Yes. Lessons are text-first, mobile-friendly, and designed to use little data. Your progress saves as you go when online.',
               ],
               [
-                'How do payments work?',
-                'Submit your payment reference using the course payment instructions. Access begins after an administrator verifies your payment.',
+                'Do I need to donate?',
+                'No. Create an account and start learning for free. Donating never changes your access or certificate eligibility.',
               ],
               [
                 'Will I get a certificate?',

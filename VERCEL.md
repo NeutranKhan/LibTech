@@ -1,5 +1,8 @@
 # Hosting LibTech on Vercel
 
+> Current launch mode (8 October 2026): all published courses are free, regardless of stored future prices. Authenticated learners enroll through `/api/enroll`; course payment submissions are disabled at the API boundary and checkout links redirect to the free course page. Optional donations never unlock access or certificates. Set `DONATION_URL` only after verifying an HTTPS payment page that supports your country and account. Leave it blank until ready. The `/support` page explains this clearly. Older paid-launch instructions below apply only after a deliberate future commercial release and the appropriate hosting plan; changing an admin payment setting alone does not enable sales.
+
+
 LibTech uses Vercel for the Next.js application and Firebase for durable accounts, course data, payments, learning records and profile images. No production data is stored on Vercel's local filesystem.
 
 ## 1. Prepare Firebase

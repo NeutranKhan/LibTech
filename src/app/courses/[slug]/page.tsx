@@ -1,3 +1,4 @@
+import { FreeEnrollment } from '@/components/free-enrollment';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header, Footer } from '@/components/public-shell';
@@ -45,16 +46,9 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
               </strong>
             </div>
             <div className="card-body">
-              <strong className="big-price">
-                ${(c.priceCents / 100).toFixed(2)} <small>USD</small>
-              </strong>
-              <p>One-time payment · lifetime access</p>
-              <Link className="button wide" href={'/checkout/' + c.id}>
-                Enroll in this course
-              </Link>
-              <Link className="button secondary wide" href={'/learn/' + c.id}>
-                Continue learning
-              </Link>
+              <strong className="big-price">Free</strong>
+              <p>Every lesson and completion certificate included. Donations are optional.</p>
+              <FreeEnrollment courseId={c.id} slug={c.slug} />
               <ul className="plain-list">
                 <li>✓ {c.modules.length} practical modules</li>
                 <li>✓ {c.modules.reduce((n, m) => n + m.lessons.length, 0)} interactive lessons</li>

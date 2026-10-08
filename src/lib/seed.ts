@@ -262,7 +262,7 @@ export const seedCourse: Course = {
     'A step-by-step beginner’s guide for ordinary people—no coding or technical background needed. Explore how AI works, write useful prompts, practice everyday writing and research, protect private information, and check unreliable answers. Includes 19 detailed lessons, guided examples, 66 interactive activities, a practical project, and a 10-question final assessment.',
   category: 'AI foundations',
   difficulty: 'Beginner',
-  priceCents: 1000,
+  priceCents: 0,
   duration: 'About 6 hours with practice',
   instructor: 'LibTech Learning Team',
   ownerId: 'platform',

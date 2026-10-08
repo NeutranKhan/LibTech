@@ -1,5 +1,8 @@
 # LibTech
 
+> Current launch mode (8 October 2026): all published courses are free, regardless of stored future prices. Authenticated learners enroll through `/api/enroll`; course payment submissions are disabled at the API boundary and checkout links redirect to the free course page. Optional donations never unlock access or certificates. Set `DONATION_URL` only after verifying an HTTPS payment page that supports your country and account. Leave it blank until ready. The `/support` page explains this clearly. Older paid-launch instructions below apply only after a deliberate future commercial release and the appropriate hosting plan; changing an admin payment setting alone does not enable sales.
+
+
 A text-first AI learning application built with Next.js App Router, TypeScript, Tailwind CSS, Firebase Authentication, Cloud Firestore, Firebase Storage, and optional server-side OpenAI grading.
 
 ## What is included

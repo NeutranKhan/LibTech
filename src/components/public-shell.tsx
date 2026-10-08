@@ -26,6 +26,7 @@ export function Footer() {
       <Brand />
       <span>Practical skills. New possibilities.</span>
       <div>
+        <Link href="/support">Support free learning</Link>
         <Link href="/privacy">Privacy</Link>
         <Link href="/terms">Terms</Link>
         <a href={'mailto:' + site.supportEmail}>Support</a>

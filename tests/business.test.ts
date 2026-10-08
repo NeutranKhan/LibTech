@@ -23,7 +23,7 @@ const student = testUser('STUDENT'),
 function setup() {
   return new MemoryStore({
     users: { [student.id]: student, [admin.id]: admin },
-    courses: { [seedCourse.id]: seedCourse },
+    courses: { [seedCourse.id]: { ...seedCourse, priceCents: 1000 } },
     settings: {
       platform: {
         ...defaultSettings,

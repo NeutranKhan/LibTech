@@ -19,7 +19,9 @@ test('production pages show live courses and no demo access', async ({ page }) =
   await expect(page.getByRole('button', { name: /Try as/ })).toHaveCount(0);
   await page.goto('/terms');
   await expect(page.getByText(/LibTech is operated by Michael Khan/)).toBeVisible();
-  await expect(page.getByText(/Course purchases are generally non-refundable/)).toBeVisible();
+  await expect(
+    page.getByText(/Donations support LibTech and are not course purchases/),
+  ).toBeVisible();
   await expect(
     page.getByRole('link', { name: 'libtech1393@gmail.com', exact: true }),
   ).toBeVisible();

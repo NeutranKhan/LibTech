@@ -20,7 +20,7 @@ const blankCourse = (): Course => ({
   description: 'Describe the practical skills learners will develop in this course.',
   category: 'AI foundations',
   difficulty: 'Beginner',
-  priceCents: 1000,
+  priceCents: 0,
   duration: '2 hours',
   instructor: 'LibTech Learning Team',
   ownerId: 'platform',
@@ -179,7 +179,7 @@ export function CourseEditor({ id }: { id: string }) {
               <input value={course.category} onChange={(e) => field('category', e.target.value)} />
             </label>
             <label>
-              Price in USD
+              Future price in USD (all courses are currently free)
               <input
                 type="number"
                 step=".01"
